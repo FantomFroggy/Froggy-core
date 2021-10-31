@@ -1,6 +1,6 @@
 const HDWalletProvider = require('truffle-hdwallet-provider');
 const fs = require('fs');
-const mnemonic = "index defy strong worry before donate busy asthma pencil pigeon surge slot";
+const mnemonic = "";
 
 module.exports = {
   networks: {
@@ -19,6 +19,13 @@ module.exports = {
     bsc: {
       provider: () => new HDWalletProvider(mnemonic, `https://bsc-dataseed1.binance.org`),
       network_id: 56,
+      confirmations: 10,
+      timeoutBlocks: 200,
+      skipDryRun: true
+    },
+    ftm: {
+      provider: () => new HDWalletProvider(mnemonic, `https://rpc.ftm.tools`),
+      network_id: 250,
       confirmations: 10,
       timeoutBlocks: 200,
       skipDryRun: true
